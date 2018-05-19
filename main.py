@@ -6,4 +6,6 @@ depa.PrintName()
 
 empl = Employee("First", "Last", "1000", "IT")
 
+depa.AddEmployee(empl)
+
 x=1
