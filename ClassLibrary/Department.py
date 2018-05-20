@@ -25,13 +25,13 @@ class Department:
 
         Department.__dictDeptNameEmployees.update({self.Name: self})
     
-    def AddEmployee(self, employee):
-        #ajoute seulement si le departement existe
-        if employee.Department.upper() in Department.__lstNameDept:
-            self.ListEmployee.append(employee)
-        else:
-            print("Error: deparment %s does not exist! ", employee.Department)
-        # print("Employee: [" + employee.LastName.capitalize() +" "+ employee.FirstName+"]  added to the list" )
+    # def AddEmployee(self, employee):
+    #     #ajoute seulement si le departement existe
+    #     if employee.Department.upper() in Department.__lstNameDept:
+    #         self.ListEmployee.append(employee)
+    #     else:
+    #         print("Error: deparment %s does not exist! ", employee.Department)
+    #     # print("Employee: [" + employee.LastName.capitalize() +" "+ employee.FirstName+"]  added to the list" )
     
 
     #static AddEmployee
@@ -47,26 +47,32 @@ class Department:
         print(self.Name)
     
     def CalculateAverage(self):
+        
         print("=========ClaculateAverage=========")
         print(self.Name)
+        
+        if (len(self.ListEmployee) ==0):
+            return 0
+        
         sumSal =0
         for emp in self.ListEmployee:
             print("Name: " +emp.LastName +" "+ emp.FirstName)            
             sumSal= sumSal+emp.Salary
 
         sumSal = sum(emp.Salary for emp in self.ListEmployee)
-        avgSal = sumSal/len(self.ListEmployee)
-        x=1
+        return sumSal/len(self.ListEmployee)
+        
         # print("Sum salaries: " + sumSal)
 
 #parcourit la liste, appele la fonction de moyenne
     def PrintAllDepartments():
        
-        for name in Department.__lstNameDept:
-            print(name)
+        # for name in Department.__lstNameDept:
+        #     print(name)
         
         for dept in Department.__lstDept:
-            print("-- in department loop")
-            print (dept.Name)
+            # print("-- in department loop")
+            # print (dept.Name)
             
-            dept.CalculateAverage()
+          avgSal =  dept.CalculateAverage()
+          print("Average salary for " + dept.Name + " is: " + str(avgSal))

@@ -83,6 +83,7 @@ while answer_continue:
         elif answer.upper() == CONST_ANSWER_YES:            
             break
     
+print(CONST_SECTION_SEPARATOR)
 Department.PrintAllDepartments()  
     
 x=1
