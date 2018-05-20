@@ -6,4 +6,4 @@ class Employee:
         self.FirstName = FirstName
         self.LastName = LastName
         self.Salary = float(Salary)
-        self.Department = Department
+        self.Department = Department        

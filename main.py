@@ -38,29 +38,49 @@ depMkt.AddEmployee(empl_mkt_3)
 Department.PrintAllDepartments()
 
 ##########
-#Wait for user exit
-boolTypedExit = False
+
 
 CONST_EXIT="EXIT"
+CONST_SECTION_SEPARATOR="/////////////////////////////////////////////////////////////////"
 
+CONST_ANSWER_YES="YES"
+CONST_ANSWER_NO="NO"
 
 #list of departments
 lstDept = []
 
 ##### Department loop
-dept = None
-while not boolTypedExit:
+newDept = None
+while True:
     deptName = input("Please enter the department name or EXIT when yhou finish: ")
     #print("You typed: " + deptName)
     if deptName.upper() == CONST_EXIT:
         break
     
-    dept = Department(deptName)
+    newDept = Department(deptName)
     
-
 Department.PrintAllDepartments()
+print(CONST_SECTION_SEPARATOR)
 
 
+#########Employee section
+newEmpl = None
+answer_continue=True
 ##### Employee Loop
-
+while answer_continue:
+    empFirstName = input("Please enter the employee first name: ")
+    empLastName = input("Please enter the employee last name: ")
+    empSalary = input("Please enter the employee salary:  ")
+    empDept = input("Please enter department Name: ")
+    
+    while True:
+        answer = input("Do you want to enter another employee yes/no? ")
+        if answer.upper() == CONST_ANSWER_NO:
+            answer_continue=False
+            break
+        elif answer.upper() == CONST_ANSWER_YES:            
+            break
+    
+    
+    
 x=1
