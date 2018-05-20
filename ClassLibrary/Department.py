@@ -48,7 +48,7 @@ you finish"
             return Department.CONST_NOT_AVAILABLE
         
         sumSal = sum(emp.Salary for emp in self.ListEmployee)
-        return sumSal/len(self.ListEmployee)
+        return round( sumSal/len(self.ListEmployee),2)
 
        
 
@@ -74,7 +74,7 @@ you finish"
                 sumSal = sumSal + sum(emp.Salary for emp in dept.ListEmployee)
                 sumEmpl = sumEmpl + len(dept.ListEmployee)
         
-        return sumSal/sumEmpl
+        return round(sumSal/sumEmpl, 2)
 
     #calculates global max    
     def CalculateGlobalMax():    
