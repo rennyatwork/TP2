@@ -6,22 +6,15 @@ class Department:
 
     __dictDeptNameEmployees = {}
 
-    # def __init__(self, Name, ListEmployee=[]):
-    #     self.Name = Name.upper()
-    #     self.ListEmployee = ListEmployee
-        
-    #     Department.__lstNameDept.append(self.Name)
-        
-    #     self.__lstDept=[]
-    #     Department.__lstDept.append(self)
-        
-
-    #     x=1
     
     def __init__(self, Name):
         self.Name = Name.upper()
         self.ListEmployee = []
         
+        #if department already exists, leave
+        if (len([x for x in Department.__lstDept if x.Name.upper() == self.Name]) >0):
+            return
+
         Department.__lstNameDept.append(self.Name)        
 
         self.__lstDept=[]

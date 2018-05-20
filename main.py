@@ -1,14 +1,13 @@
 from ClassLibrary.Department import Department 
 from ClassLibrary.Employee import Employee
 
-lstDept = []
+
 
 
 depMkt = Department("mkt")
 depIt = Department("It")
+depEmpty = Department("NobodyWorksHere")
 
-# lstDept.append(depMkt)
-# lstDept.append(depIt)
 
 
 empl_it_1 = Employee("First", "aaa", 4200, "it")
@@ -37,5 +36,26 @@ depMkt.AddEmployee(empl_mkt_4)
 #class
 Department.PrintAllDepartments()
 
+##########
+#Wait for user exit
+boolTypedExit = False
+
+CONST_EXIT="EXIT"
+
+
+#list of departments
+lstDept = []
+
+dept = None
+while not boolTypedExit:
+    deptName = input("Please enter the department name or EXIT when yhou finish: ")
+    #print("You typed: " + deptName)
+    if deptName.upper() == CONST_EXIT:
+        break
+    
+    dept = Department(deptName)
+    
+
+Department.PrintAllDepartments()
 
 x=1
