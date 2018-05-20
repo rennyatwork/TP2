@@ -1,0 +1,25 @@
+### Simule le cas où on n'a pas ajouté aucun département
+### Ensuiste on essaie d'ajouter 1 employé. On ne peut pas à cause de la restriction 
+### "[ZZ6]: Le Département doit être dans la liste
+### des départements inscrits, pourrait être dans une casse
+### différente. Les employés ne sont pas regroupés en entrée
+### par départ."
+
+### Dans les statistiques, on voit un message pour ALL departments et c'est toujours Not Available
+
+Script started on Sun 20 May 2018 04:05:25 PM EDT
+
+Please enter the department name or EXIT when yhou finish: exit
+/////////////////////////////////////////////////////////////////
+Please enter the employee first name: a
+Please enter the employee last name: b
+Please enter the employee salary:  9000
+Please enter department Name: a
+Error: deparment a does not exist! 
+Do you want to enter another employee yes/no? no
+/////////////////////////////////////////////////////////////////
+Average salary for ALL departments is: Not Available
+Max salary for ALL departments is: Not Available
+Min salary for ALL departments is: Not Available
+
+Script done on Sun 20 May 2018 04:05:45 PM EDT

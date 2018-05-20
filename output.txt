@@ -1,0 +1,44 @@
+### Simule le cas d'utilisation de l'enoncé
+
+Script started on Sun 20 May 2018 03:33:30 PM EDT
+
+Please enter the department name or EXIT when you finish: IT
+Please enter the department name or EXIT when you finish: marKEting
+Please enter the department name or EXIT when you finish: 
+The department name could not be empty. Please enter the department name or EXIT whenyou finish
+Please enter the department name or EXIT when you finish: exit
+/////////////////////////////////////////////////////////////////
+Please enter the employee first name: Zied
+Please enter the employee last name: Zaier
+Please enter the employee salary:  5000
+Please enter department Name: it
+Do you want to enter another employee yes/no? yes
+Please enter the employee first name: Cheng
+Please enter the employee last name: Lee
+Please enter the employee salary:  3000
+Please enter department Name: iT
+Do you want to enter another employee yes/no? yes
+Please enter the employee first name: He
+Please enter the employee last name: Jin
+Please enter the employee salary:  3000
+Please enter department Name: MArketing
+Do you want to enter another employee yes/no? no
+/////////////////////////////////////////////////////////////////
+Average salary for IT is: 4000.0
+Max salary for IT is: 5000.0
+Min salary for IT is: 3000.0
+
+
+
+Average salary for MARKETING is: 3000.0
+Max salary for MARKETING is: 3000.0
+Min salary for MARKETING is: 3000.0
+
+
+
+Average salary for ALL departments is: 3800.0
+Max salary for ALL departments is: 5000.0
+Min salary for ALL departments is: 3000.0
+
+
+Script done on Sun 20 May 2018 03:34:54 PM EDT

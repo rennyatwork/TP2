@@ -1,0 +1,35 @@
+### simule le cas où on a ajouté 2 departements, mais aucun employé
+### les informations de statistiques sont toutes "Not Available"
+
+Script started on Sun 20 May 2018 03:36:03 PM EDT
+
+Please enter the department name or EXIT when you finish: dep1
+Please enter the department name or EXIT when you finish: dep2
+Please enter the department name or EXIT when you finish: exit
+/////////////////////////////////////////////////////////////////
+Please enter the employee first name: 
+Please enter the employee last name: 
+Please enter the employee salary:  
+Please enter department Name: 
+Last Name cannot be empty
+First Name cannot be empty
+Salary must be be a number greater than 0
+Do you want to enter another employee yes/no? no
+/////////////////////////////////////////////////////////////////
+Average salary for DEP1 is: Not Available
+Max salary for DEP1 is: Not Available
+Min salary for DEP1 is: Not Available
+
+
+
+Average salary for DEP2 is: Not Available
+Max salary for DEP2 is: Not Available
+Min salary for DEP2 is: Not Available
+
+
+
+Average salary for ALL departments is: Not Available
+Max salary for ALL departments is: Not Available
+Min salary for ALL departments is: Not Available
+
+Script done on Sun 20 May 2018 03:36:25 PM EDT

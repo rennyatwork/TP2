@@ -1,0 +1,52 @@
+### Simule l'entré d'un employé invalide et deux valides
+### Dans les statistiques on voit bien que celui invalide n'a pas été considéré
+
+Script started on Sun 20 May 2018 04:00:27 PM EDT
+
+Please enter the department name or EXIT when yhou finish: dep1
+Please enter the department name or EXIT when yhou finish: dep2
+Please enter the department name or EXIT when yhou finish: dep3
+Please enter the department name or EXIT when yhou finish: 
+The department name could not be empty. Please enter the department name or EXIT whenyou finish
+Please enter the department name or EXIT when yhou finish: exit
+/////////////////////////////////////////////////////////////////
+Please enter the employee first name: invalid
+Please enter the employee last name: negative salary
+Please enter the employee salary:  -8888
+Please enter department Name: dep1
+Salary must be greater than 0
+Do you want to enter another employee yes/no? yes
+Please enter the employee first name: dep1
+Please enter the employee last name: sal 1000
+Please enter the employee salary:  1000
+Please enter department Name: dep1
+Do you want to enter another employee yes/no? yes
+Please enter the employee first name: dep2^[[D^[[D            emp dep2
+Please enter the employee last name: sal 3484.43
+Please enter the employee salary:  3484.43
+Please enter department Name: dep2
+Do you want to enter another employee yes/no? no
+/////////////////////////////////////////////////////////////////
+Average salary for DEP1 is: 1000.0
+Max salary for DEP1 is: 1000.0
+Min salary for DEP1 is: 1000.0
+
+
+
+Average salary for DEP2 is: 3484.43
+Max salary for DEP2 is: 3484.43
+Min salary for DEP2 is: 3484.43
+
+
+
+Average salary for DEP3 is: Not Available
+Max salary for DEP3 is: Not Available
+Min salary for DEP3 is: Not Available
+
+
+
+Average salary for ALL departments is: 2242.22
+Max salary for ALL departments is: 3484.43
+Min salary for ALL departments is: 1000.0
+
+Script done on Sun 20 May 2018 04:01:55 PM EDT
