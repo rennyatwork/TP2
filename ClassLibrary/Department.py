@@ -40,14 +40,10 @@ you finish"
         else:
             print("Error: deparment "+employee.Department+" does not exist! " )
 
-    # def PrintName(self):
-    #     print(self.Name)
+   
     
-    def CalculateAverage(self):
-        
-        # print("=========ClaculateAverage=========")
-        # print(self.Name)
-        
+    def CalculateAverage(self):        
+       
         if (len(self.ListEmployee) ==0):
             return Department.CONST_NOT_AVAILABLE
         
@@ -65,6 +61,54 @@ you finish"
         if (len(self.ListEmployee)==0):
             return Department.CONST_NOT_AVAILABLE
         return min(x.Salary for x in self.ListEmployee)
+
+    #static function to calculate the average for all depts    
+    def CalculateGlobalAverage():
+        if (Department.__lstDept == None or len(Department.__lstDept) == 0):
+            return Department.CONST_NOT_AVAILABLE
+        
+        sumSal = 0
+        sumEmpl = 0
+        for dept in Department.__lstDept:
+            for emp in dept.ListEmployee:
+                sumSal = sumSal + sum(emp.Salary for emp in dept.ListEmployee)
+                sumEmpl = sumEmpl + len(dept.ListEmployee)
+        
+        return sumSal/sumEmpl
+
+    #calculates global max    
+    def CalculateGlobalMax():    
+        if(Department.__lstDept == None or len(Department.__lstDept)==0):
+            return Department.CONST_NOT_AVAILABLE
+        
+        listMax=[]
+        for dept in Department.__lstDept:
+            if (dept.ListEmployee == None or len(dept.ListEmployee)==0):
+                continue                
+            else:
+                listMax.append(max(emp.Salary for emp in dept.ListEmployee))
+        
+        if (len(listMax)==0):
+            return Department.CONST_NOT_AVAILABLE
+        
+        return max(listMax)
+
+    #calculates global min
+    def CalculateGlobalMin():    
+        if(Department.__lstDept == None or len(Department.__lstDept)==0):
+            return Department.CONST_NOT_AVAILABLE
+        
+        listMin=[]
+        for dept in Department.__lstDept:
+            if (dept.ListEmployee == None or len(dept.ListEmployee)==0):
+                continue                
+            else:
+                listMin.append(min(emp.Salary for emp in dept.ListEmployee))
+        
+        if (len(listMin)==0):
+            return Department.CONST_NOT_AVAILABLE
+        
+        return min(listMin)
 
 #parcourit la liste, appele la fonction de moyenne, max et min
     def PrintAllDepartments():
@@ -86,3 +130,14 @@ you finish"
           print("Min salary for " + dept.Name.upper() + " is: " + str(minSal))
 
           print("\r\n")
+        
+        globalSalAvg = Department.CalculateGlobalAverage()
+        print ("Average salary for ALL departments is: " +str(globalSalAvg))
+
+        globalMaxSal = Department.CalculateGlobalMax()
+        print ("Max salary for ALL departments is: " +str(globalMaxSal))
+
+        globalMinSal = Department.CalculateGlobalMin()
+        print ("Min salary for ALL departments is: " +str(globalMinSal))
+
+          
