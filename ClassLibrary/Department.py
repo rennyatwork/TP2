@@ -6,7 +6,8 @@ class Department:
 
     __dictDeptNameEmployees = {}
 
-    
+    CONST_NOT_AVAILABLE="Not Available"
+
     def __init__(self, Name):
         if(Name is None or Name.isspace() or Name.strip() ==''):
             print("Le nom ne peut pas être vide")
@@ -52,22 +53,22 @@ class Department:
         # print(self.Name)
         
         if (len(self.ListEmployee) ==0):
-            return 0
+            return Department.CONST_NOT_AVAILABLE
         
         sumSal = sum(emp.Salary for emp in self.ListEmployee)
         return sumSal/len(self.ListEmployee)
 
-        # sumSal =0
-        # for emp in self.ListEmployee:
-        #     print("Name: " +emp.LastName +" "+ emp.FirstName)            
-        #     sumSal= sumSal+emp.Salary       
-        
-        # print("Sum salaries: " + sumSal)
+       
 
     def CalculateMax(self):
         if (len(self.ListEmployee)==0):
-            return 0
+            return Department.CONST_NOT_AVAILABLE
         return max(x.Salary for x in self.ListEmployee)
+    
+    def CalculateMin(self):
+        if (len(self.ListEmployee)==0):
+            return Department.CONST_NOT_AVAILABLE
+        return min(x.Salary for x in self.ListEmployee)
 
 #parcourit la liste, appele la fonction de moyenne
     def PrintAllDepartments():
@@ -80,7 +81,12 @@ class Department:
             # print (dept.Name)
             
           avgSal =  dept.CalculateAverage()
-          print("Average salary for " + dept.Name + " is: " + str(avgSal))
+          print("Average salary for " + dept.Name.upper() + " is: " + str(avgSal))
 
           maxSal = dept.CalculateMax()
-          print("Max salary for " + dept.Name + " is: " + str(maxSal))
+          print("Max salary for " + dept.Name.upper() + " is: " + str(maxSal))
+
+          minSal = dept.CalculateMin()
+          print("Min salary for " + dept.Name.upper() + " is: " + str(minSal))
+
+          print("\r\n")
