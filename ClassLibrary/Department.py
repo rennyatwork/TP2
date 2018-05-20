@@ -48,21 +48,26 @@ class Department:
     
     def CalculateAverage(self):
         
-        print("=========ClaculateAverage=========")
-        print(self.Name)
+        # print("=========ClaculateAverage=========")
+        # print(self.Name)
         
         if (len(self.ListEmployee) ==0):
             return 0
         
-        sumSal =0
-        for emp in self.ListEmployee:
-            print("Name: " +emp.LastName +" "+ emp.FirstName)            
-            sumSal= sumSal+emp.Salary
-
         sumSal = sum(emp.Salary for emp in self.ListEmployee)
         return sumSal/len(self.ListEmployee)
+
+        # sumSal =0
+        # for emp in self.ListEmployee:
+        #     print("Name: " +emp.LastName +" "+ emp.FirstName)            
+        #     sumSal= sumSal+emp.Salary       
         
         # print("Sum salaries: " + sumSal)
+
+    def CalculateMax(self):
+        if (len(self.ListEmployee)==0):
+            return 0
+        return max(x.Salary for x in self.ListEmployee)
 
 #parcourit la liste, appele la fonction de moyenne
     def PrintAllDepartments():
@@ -76,3 +81,6 @@ class Department:
             
           avgSal =  dept.CalculateAverage()
           print("Average salary for " + dept.Name + " is: " + str(avgSal))
+
+          maxSal = dept.CalculateMax()
+          print("Max salary for " + dept.Name + " is: " + str(maxSal))
