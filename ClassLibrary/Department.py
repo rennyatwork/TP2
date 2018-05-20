@@ -8,6 +8,9 @@ class Department:
 
     
     def __init__(self, Name):
+        if(Name is None or Name.isspace() or Name.strip() ==''):
+            print("Le nom ne peut pas être vide")
+            return
         self.Name = Name.upper()
         self.ListEmployee = []
         
