@@ -1,7 +1,7 @@
 #classe qui contient les donnés et logique associé à un departement
 class Department:
     # on garde chaque departement ajouté dans la liste
-    __lstNameDept = []
+    # __lstNameDept = []
     
     __lstDept = []
 
@@ -22,7 +22,7 @@ you finish"
         if (len([x for x in Department.__lstDept if x.Name.upper() == self.Name]) >0):
             return
 
-        Department.__lstNameDept.append(self.Name)        
+        # Department.__lstNameDept.append(self.Name)        
 
         self.__lstDept=[]
         Department.__lstDept.append(self)
@@ -74,6 +74,9 @@ you finish"
                 sumSal = sumSal + sum(emp.Salary for emp in dept.ListEmployee)
                 sumEmpl = sumEmpl + len(dept.ListEmployee)
         
+        if(sumEmpl == 0):
+            return Department.CONST_NOT_AVAILABLE
+
         return round(sumSal/sumEmpl, 2)
 
     #calculates global max    
