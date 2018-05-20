@@ -1,3 +1,4 @@
+#classe qui contient les donnés et logique associé à un departement
 class Department:
     # on garde chaque departement ajouté dans la liste
     __lstNameDept = []
@@ -39,8 +40,8 @@ you finish"
         else:
             print("Error: deparment "+employee.Department+" does not exist! " )
 
-    def PrintName(self):
-        print(self.Name)
+    # def PrintName(self):
+    #     print(self.Name)
     
     def CalculateAverage(self):
         
@@ -65,7 +66,7 @@ you finish"
             return Department.CONST_NOT_AVAILABLE
         return min(x.Salary for x in self.ListEmployee)
 
-#parcourit la liste, appele la fonction de moyenne
+#parcourit la liste, appele la fonction de moyenne, max et min
     def PrintAllDepartments():
        
         # for name in Department.__lstNameDept:

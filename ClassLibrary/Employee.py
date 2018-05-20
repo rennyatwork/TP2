@@ -1,3 +1,4 @@
+# Classe qui contient les donnés et logique associés à un employé
 import numbers
 class Employee:
     def __init__(self, FirstName, LastName, Salary, Department):

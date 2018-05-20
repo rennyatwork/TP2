@@ -4,54 +4,26 @@ from ClassLibrary.Employee import Employee
 
 
 
-# depMkt = Department("mkt")
-# depIt = Department("It")
-# depEmpty = Department("NobodyWorksHere")
-
-
-
-# empl_it_1 = Employee("First", "aaa", 4200, "it")
-# empl_it_2 = Employee("First", "Last", 2700, "IT")
-# empl_it_3 = Employee("First", "Last Name", 3000, "iT")
-
-# empl_mkt_1 = Employee("John", "Bull",2544,"mkt")
-# empl_mkt_2 = Employee("Jim", "Carey",2644,"mKt")
-# empl_mkt_3 = Employee("Jack", "Naldson",2844,"mkT")
-# empl_mkt_4 = Employee("Zz", "Jellerson",0,"mkT")
-
-# depIt.AddEmployee(empl_it_1)
-# depIt.AddEmployee(empl_it_2)
-# depIt.AddEmployee(empl_it_3)
-
-# depMkt.AddEmployee(empl_mkt_1)
-# depMkt.AddEmployee(empl_mkt_2)
-# depMkt.AddEmployee(empl_mkt_3)
-
-# #should not add
-# empl_xxx_1 = Employee("JackXXX", "Naldson",2844,"xxx")
-# depMkt.AddEmployee(empl_mkt_4)
-
-#instance
-# depMkt.PrintAllDepartments()
-
-#class
-# Department.PrintAllDepartments()
-
-##########
-
-
 CONST_EXIT="EXIT"
 CONST_SECTION_SEPARATOR="/////////////////////////////////////////////////////////////////"
 
 CONST_ANSWER_YES="YES"
 CONST_ANSWER_NO="NO"
 
+# DEPARTMENT DATA
+CONST_MSG_DEPARTMENT = "Please enter the department name or EXIT when yhou finish: "
+
+#EMPLOYEE DATA
+CONST_MSG_FIRST_NAME = "Please enter the employee first name: "
+CONST_MSG_LAST_NAME = "Please enter the employee last name: "
+CONST_MSG_SALARY = "Please enter the employee salary:  "
+CONST_MSG_DEPT = "Please enter department Name: "
 
 ##### Department loop
 newDept = None
 while True:
-    deptName = input("Please enter the department name or EXIT when yhou finish: ")
-    #print("You typed: " + deptName)
+    deptName = input(CONST_MSG_DEPARTMENT)
+    
     if deptName.upper() == CONST_EXIT:
         break
     
@@ -66,10 +38,10 @@ newEmpl = None
 answer_continue=True
 ##### Employee Loop
 while answer_continue:
-    empFirstName = input("Please enter the employee first name: ")
-    empLastName = input("Please enter the employee last name: ")
-    empSalary = input("Please enter the employee salary:  ")
-    empDept = input("Please enter department Name: ")
+    empFirstName = input(CONST_MSG_FIRST_NAME)
+    empLastName = input(CONST_MSG_LAST_NAME)
+    empSalary = input(CONST_MSG_SALARY)
+    empDept = input(CONST_MSG_DEPT)
     
     newEmpl = Employee(empFirstName, empLastName, empSalary, empDept)
     
@@ -86,5 +58,3 @@ while answer_continue:
     
 print(CONST_SECTION_SEPARATOR)
 Department.PrintAllDepartments()  
-    
-x=1
