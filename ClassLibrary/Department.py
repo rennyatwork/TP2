@@ -6,11 +6,13 @@ class Department:
 
     __dictDeptNameEmployees = {}
 
-    CONST_NOT_AVAILABLE="Not Available"
+    CONST_NOT_AVAILABLE = "Not Available"
+    CONST_MSG_DEPT_VIDE = "The department name could not be empty. Please enter the department name or EXIT when\
+you finish"
 
     def __init__(self, Name):
         if(Name is None or Name.isspace() or Name.strip() ==''):
-            print("Le nom ne peut pas être vide")
+            print(Department.CONST_MSG_DEPT_VIDE)
             return
         self.Name = Name.upper()
         self.ListEmployee = []
@@ -26,14 +28,7 @@ class Department:
 
         Department.__dictDeptNameEmployees.update({self.Name: self})
     
-    # def AddEmployee(self, employee):
-    #     #ajoute seulement si le departement existe
-    #     if employee.Department.upper() in Department.__lstNameDept:
-    #         self.ListEmployee.append(employee)
-    #     else:
-    #         print("Error: deparment %s does not exist! ", employee.Department)
-    #     # print("Employee: [" + employee.LastName.capitalize() +" "+ employee.FirstName+"]  added to the list" )
-    
+  
 
     #static AddEmployee
     def AddEmployee(employee):

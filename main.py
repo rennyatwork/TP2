@@ -68,11 +68,12 @@ answer_continue=True
 while answer_continue:
     empFirstName = input("Please enter the employee first name: ")
     empLastName = input("Please enter the employee last name: ")
-    empSalary = float(input("Please enter the employee salary:  "))
+    empSalary = input("Please enter the employee salary:  ")
     empDept = input("Please enter department Name: ")
     
     newEmpl = Employee(empFirstName, empLastName, empSalary, empDept)
-    if (not newEmpl == None ):
+    
+    if (newEmpl.IsEmployeeValid()):
         Department.AddEmployee(newEmpl)
 
     while True:
