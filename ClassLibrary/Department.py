@@ -22,6 +22,8 @@ class Department:
 
         self.__lstDept=[]
         Department.__lstDept.append(self)
+
+        Department.__dictDeptNameEmployees.update({self.Name: self})
     
     def AddEmployee(self, employee):
         #ajoute seulement si le departement existe
@@ -31,6 +33,16 @@ class Department:
             print("Error: deparment %s does not exist! ", employee.Department)
         # print("Employee: [" + employee.LastName.capitalize() +" "+ employee.FirstName+"]  added to the list" )
     
+
+    #static AddEmployee
+    def AddEmployee(employee):
+        if employee.Department.upper() in Department.__dictDeptNameEmployees:
+            dept = Department.__dictDeptNameEmployees[employee.Department.upper()]
+            dept.ListEmployee.append(employee)
+
+        else:
+            print("Error: deparment "+employee.Department+" does not exist! " )
+
     def PrintName(self):
         print(self.Name)
     
@@ -42,15 +54,14 @@ class Department:
             print("Name: " +emp.LastName +" "+ emp.FirstName)            
             sumSal= sumSal+emp.Salary
 
-        # sumSal = sum(emp.Salary in self.ListEmployee)
+        sumSal = sum(emp.Salary for emp in self.ListEmployee)
+        avgSal = sumSal/len(self.ListEmployee)
         x=1
         # print("Sum salaries: " + sumSal)
 
 #parcourit la liste, appele la fonction de moyenne
     def PrintAllDepartments():
-        # for dept in Department.__lstDept:
-        #     print(dept.Name)
-        
+       
         for name in Department.__lstNameDept:
             print(name)
         
